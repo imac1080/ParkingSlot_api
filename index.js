@@ -9,6 +9,12 @@ const config = require("dotenv").config();
 // Cargamos el archivo que tendra todas las rutas, donde dependiendo de cada ruta ira a un lugar o a otro.
 const routesIndex = require("./routes/index.route");
 
+/* NOTA IMPORTANTE SOBRE HEROKU
+* Cuando nosotros queremos subir la app a Heroku hay que seguir unos pasos:
+* - Poner la ruta de mongoatlas con usuario y contraseña y la base de datos que vamos a acceder en variables de entorno de Heroku
+* - Poner en nuestro index.js donde se conecta a mongo atlas la variable de enterno process.env.NOMBREQUEQUERAMOS que sera el mismo que esta en heroku
+* - Cambiar en el package.json los scripts y poner un start que es donde Heroku cogera el comando para iniciar la app en nuestro caso node index.js como lo hacemos en local.
+*/
 
 
 
