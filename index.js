@@ -23,7 +23,7 @@ const url = "mongodb+srv://" + process.env.ATLASUSERNAME + ":" + process.env.ATL
 * Conexion a la base de datos 
 */
 mongoose
-    .connect(process.env.MONGODB_URI || url , {
+    .connect(process.env.MONGODB_HEROKU || url , {
         // Comprueba que sea una url
         useNewUrlParser: true,
         // Comprueba el motor y el servidor
