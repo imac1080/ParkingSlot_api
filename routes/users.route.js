@@ -5,6 +5,7 @@ const router = express.Router();
 
 const User = require("../schemas/User");
 
+// Metodo que busca todos los usuarios
 router.get("/allUsers", async (req, res) => {
     User.find().then(result => {
         res.send(result);
