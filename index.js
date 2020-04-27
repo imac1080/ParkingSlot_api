@@ -1,11 +1,25 @@
+// MODULOS //
 // Cargar modulo de express
 const express = require("express");
-// Llamamos a express para poder crear el servidor
-const app = express();
 // Cargamos el modulo de mongoose, necesario para conectarte a mongoDB
 const mongoose = require('mongoose');
 // Cargamos modulo dotenv, necesario para poder llamar a las variables del archivo .env
 const config = require("dotenv").config();
+// Cargamos el modulo de body-parser para poder parsear lo que nos entra a JSON
+const bodyParser = require('body-parser');
+
+// USOS DE EXPRESS //
+// Llamamos a express para poder usar sus funciones
+const app = express();
+/*
+* Una vez llamado al express podemos usar su metodo use() que sirve para cargar complementos en nuestra api
+* Un ejemplo es cargar el bodyParser para si poder parsear todos los formularios que nos vengan de peticiones
+* a JSON y poder leerlo y ejecutarlo correctamente.
+*/
+app.use(express.urlencoded({ extended: true}));
+app.use(bodyParser.json());
+
+// CARGAS DE ARCHIVOS DE RUTA //
 // Cargamos el archivo que tendra todas las rutas, donde dependiendo de cada ruta ira a un lugar o a otro.
 const routesIndex = require("./routes/index.route");
 
