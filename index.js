@@ -7,10 +7,13 @@ const mongoose = require('mongoose');
 const config = require("dotenv").config();
 // Cargamos el modulo de body-parser para poder parsear lo que nos entra a JSON
 const bodyParser = require('body-parser');
+// Cargamos el modulo de los cors, para que al hacer una peticion https no nos de error de los cors en nuestra app
+const cors = require('cors');
 
 // USOS DE EXPRESS //
 // Llamamos a express para poder usar sus funciones
 const app = express();
+app.use(cors());
 /*
 * Una vez llamado al express podemos usar su metodo use() que sirve para cargar complementos en nuestra api
 * Un ejemplo es cargar el bodyParser para si poder parsear todos los formularios que nos vengan de peticiones
